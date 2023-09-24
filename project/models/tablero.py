@@ -7,7 +7,7 @@ class Tablero():
             #['0','1','2'],-X
             ]
           
-    def colocar_ficha(self, pos:tuple, turno:bool):
+    def colocar_ficha(self, pos, turno):
         simbolo = 'X' if turno else 'O'
         fila, columna = pos[0], pos[1]
         if self.mapa[fila][columna] != ' ':
@@ -15,7 +15,7 @@ class Tablero():
         self.mapa[fila][columna] = simbolo
         return True
     
-    def hay_victoria(self, turno:bool):
+    def hay_victoria(self, turno):
         valor = 'X' if turno else 'O'
         for fila in self.mapa:
             if fila[0] == valor and fila[0] == fila[1] and fila[1] == fila[2]:

@@ -6,7 +6,7 @@ class TicTacToe():
     def __init__(self) -> None:
         self.turno = False
 
-    def obtener_espacios_libres (self, mapa:list[list[str]]):
+    def obtener_espacios_libres (self, mapa):
             libres = []
             for i in range(3):
                 for j in range(3):
@@ -14,7 +14,7 @@ class TicTacToe():
                         libres.append((i,j))
             return libres
 
-    def simular_jugadas(self, mapa:list[list[str]], turno:bool):
+    def simular_jugadas(self, mapa, turno):
         espacios_libres = self.obtener_espacios_libres(copy.deepcopy(mapa))
         tablero_simulado = Tablero(mapa=copy.deepcopy(mapa))
         puntaje = 0
